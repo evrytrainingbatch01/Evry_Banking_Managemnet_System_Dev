@@ -9,9 +9,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.evry.bank.model.Customer;
@@ -24,7 +25,7 @@ public class CustomerController {
 	private CustomerService customerService;
 	
 	@PostMapping("/addCustomer")
-	public Customer addCustomer(@ModelAttribute Customer customer) {
+	public Customer addCustomer(@RequestBody Customer customer) {
 		
 		//this is adding customer method.here app is taking the object and passing it to service.
 		customerService.addCustomer(customer);
@@ -32,8 +33,8 @@ public class CustomerController {
 		return customer;
 	}
 	
-	@GetMapping("/getCustomer")
-	public Customer getCustomerById(int id) {
+	@GetMapping("/getCustomer/{id}")
+	public Customer getCustomerById(@PathVariable int id) {
 		Customer customer = customerService.getCusomterById(id);
 		
 		return customer;
@@ -45,15 +46,15 @@ public class CustomerController {
 		return  allCustomersList;
 	}
 	
-	@PutMapping("/updateCustomer")
-	public int updateCustomer(@ModelAttribute Customer customer,int id) {
+	@PutMapping("/updateCustomer/{id}")
+	public int updateCustomer(@RequestBody Customer customer,@PathVariable int id) {
 		int updateCustomer = customerService.updateCustomer(id, customer);
 		return updateCustomer;
 		
 	}
 	
-	@DeleteMapping("/deleteCustomer")
-	public int deleteCustomer(int id) {
+	@DeleteMapping("/deleteCustomer/{id}")
+	public int deleteCustomer(@PathVariable int id) {
 		int deleteCustomer = customerService.deleteCustomer(id);
 		return deleteCustomer;
 		
