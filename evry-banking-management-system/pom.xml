@@ -12,7 +12,7 @@
 	<artifactId>evry-banking-management-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>evry-banking-management-system</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Banking Management System</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -21,9 +21,18 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>

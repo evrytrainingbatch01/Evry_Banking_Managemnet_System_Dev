@@ -1,4 +1,4 @@
-package com.evry.bank.evrybankingmanagementsystem;
+package com.evry.bank;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

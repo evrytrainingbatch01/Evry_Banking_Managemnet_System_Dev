@@ -1,4 +1,4 @@
-package com.evry.bank.evrybankingmanagementsystem;
+package com.evry.bank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
