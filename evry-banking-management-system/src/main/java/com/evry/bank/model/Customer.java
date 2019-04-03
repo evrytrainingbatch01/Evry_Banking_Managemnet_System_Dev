@@ -1,22 +1,61 @@
 package com.evry.bank.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.context.annotation.Description;
+
+@Entity
+@Table(name = "eb_customer")
+@Description("This is customer entity")
 public class Customer {
 
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "EB_CUSTOMER_ID")
 	private int id;
-	private String userName;
-	private String email;
-	private LocalDate dateOfBirth;
+
+	@Column(name = "EB_CUSTOMER_NAME")
+	private String name;
+
+	@Column(name = "EB_CUSTOMER_EMAILID")
+	private String emailId;
+
+	@Column(name = "EB_CUSTOMER_DOB")
+	private Date dateOfBirth;
+
+	@Column(name = "EB_CUSTOMER_ADDRESS")
+	private String address;
+
+	@Column(name = "EB_CUSTOMER_CITY")
 	private String city;
+
+	@Column(name = "EB_CUSTOMER_COUNTRY")
 	private String country;
-	private long mobile;
-	private long customer_id;
+
+	@Column(name = "EB_CUSTOMER_MOBILENO")
+	private int mobileNo;
+
+	@Column(name = "EB_CUSTOMER_LOGIN_ID")
+	private int loginId;
+
+	@Column(name = "EB_CUSTOMER_PASSWORD")
 	private String password;
+
+	@Column(name = "EB_CUSTOMER_USERTYPE")
 	private int userType;
-	private LocalDate lastUpdate;
+
+	@Column(name = "EB_CUSTOMER_ACCOUNTSTATUS")
 	private int accountStatus;
+
+	@Column(name = "EB_CUSTOMER_LASTUPDATED")
+	private Date lastUpdated;
 
 	public int getId() {
 		return id;
@@ -26,28 +65,36 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getName() {
+		return name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 
-	public LocalDate getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getCity() {
@@ -66,20 +113,20 @@ public class Customer {
 		this.country = country;
 	}
 
-	public long getMobile() {
-		return mobile;
+	public int getMobileNo() {
+		return mobileNo;
 	}
 
-	public void setMobile(long mobile) {
-		this.mobile = mobile;
+	public void setMobileNo(int mobileNo) {
+		this.mobileNo = mobileNo;
 	}
 
-	public long getCustomer_id() {
-		return customer_id;
+	public int getLoginId() {
+		return loginId;
 	}
 
-	public void setCustomer_id(long customer_id) {
-		this.customer_id = customer_id;
+	public void setLoginId(int loginId) {
+		this.loginId = loginId;
 	}
 
 	public String getPassword() {
@@ -98,14 +145,6 @@ public class Customer {
 		this.userType = userType;
 	}
 
-	public LocalDate getLastUpdate() {
-		return lastUpdate;
-	}
-
-	public void setLastUpdate(LocalDate lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
-
 	public int getAccountStatus() {
 		return accountStatus;
 	}
@@ -114,12 +153,12 @@ public class Customer {
 		this.accountStatus = accountStatus;
 	}
 
-	@Override
-	public String toString() {
-		return "Customer [id=" + id + ", userName=" + userName + ", email=" + email + ", dateOfBirth=" + dateOfBirth
-				+ ", city=" + city + ", country=" + country + ", mobile=" + mobile + ", customer_id=" + customer_id
-				+ ", password=" + password + ", userType=" + userType + ", lastUpdate=" + lastUpdate
-				+ ", accountStatus=" + accountStatus + "]";
+	public Date getLastUpdated() {
+		return lastUpdated;
+	}
+
+	public void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
 	}
 
 }
