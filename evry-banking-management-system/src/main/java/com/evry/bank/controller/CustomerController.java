@@ -5,6 +5,7 @@
 package com.evry.bank.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,8 +40,8 @@ public class CustomerController {
 	}
 	
 	@GetMapping("/getCustomer/{id}")
-	public Customer getCustomerById(@PathVariable int id) {
-		Customer customer = customerService.getCusomterById(id);
+	public  Optional<Customer> getCustomerById(@PathVariable int id) {
+		Optional<Customer> customer = customerService.getCusomterById(id);
 		
 		return customer;
 	}
