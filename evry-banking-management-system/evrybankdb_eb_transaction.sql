@@ -16,37 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `eb_customer`
+-- Table structure for table `eb_transaction`
 --
 
-DROP TABLE IF EXISTS `eb_customer`;
+DROP TABLE IF EXISTS `eb_transaction`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `eb_customer` (
-  `EB_CUSTOMER_ID` int(11) NOT NULL AUTO_INCREMENT,
-  `EB_CUSTOMER_NAME` varchar(45) DEFAULT NULL,
-  `EB_CUSTOMER_EMAILID` varchar(45) DEFAULT NULL,
-  `EB_CUSTOMER_DOB` date DEFAULT NULL,
-  `EB_CUSTOMER_ADDRESS` varchar(100) DEFAULT NULL,
-  `EB_CUSTOMER_CITY` varchar(45) DEFAULT NULL,
-  `EB_CUSTOMER_COUNTRY` varchar(45) DEFAULT NULL,
-  `EB_CUSTOMER_MOBILENO` int(11) DEFAULT NULL,
-  `EB_CUSTOMER_LOGINID` int(11) DEFAULT NULL,
-  `EB_CUSTOMER_PASSWORD` varchar(45) DEFAULT NULL,
-  `EB_CUSTOMER_USERTYPE` int(11) DEFAULT '1',
-  `EB_CUSTOMER_ACCOUNTSTATUS` int(11) DEFAULT '1',
-  `EB_CUSTOMER_LASTUPDATED` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`EB_CUSTOMER_ID`)
+CREATE TABLE `eb_transaction` (
+  `EB_TRANSACTION_ID` int(11) NOT NULL AUTO_INCREMENT,
+  `EB_TRANS_CUSTOMER_ID` int(11) DEFAULT NULL,
+  `EB_TRANS_ACCOUNT_ID` int(11) DEFAULT NULL,
+  PRIMARY KEY (`EB_TRANSACTION_ID`),
+  KEY `EB_TRANS_CUSTOMER_ID_idx` (`EB_TRANS_CUSTOMER_ID`),
+  KEY `EB_TRANS_ACCOUNT_ID_idx` (`EB_TRANS_ACCOUNT_ID`),
+  CONSTRAINT `EB_TRANS_ACCOUNT_ID` FOREIGN KEY (`EB_TRANS_ACCOUNT_ID`) REFERENCES `eb_account` (`EB_ACCOUNT_ID`),
+  CONSTRAINT `EB_TRANS_CUSTOMER_ID` FOREIGN KEY (`EB_TRANS_CUSTOMER_ID`) REFERENCES `eb_customer` (`EB_CUSTOMER_ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `eb_customer`
+-- Dumping data for table `eb_transaction`
 --
 
-LOCK TABLES `eb_customer` WRITE;
-/*!40000 ALTER TABLE `eb_customer` DISABLE KEYS */;
-/*!40000 ALTER TABLE `eb_customer` ENABLE KEYS */;
+LOCK TABLES `eb_transaction` WRITE;
+/*!40000 ALTER TABLE `eb_transaction` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eb_transaction` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
