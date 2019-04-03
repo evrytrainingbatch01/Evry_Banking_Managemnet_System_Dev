@@ -12,11 +12,11 @@ public interface CustomerDao extends CrudRepository<Customer,Integer>{
 
 	public Customer getCusomterById(final int id);
 
-	public List<Customer> getAllCustomers();
+	//public List<Customer> getAllCustomers();
 
 	public int updateCustomer(final int id, final Customer customer);
 
-	public int deleteCustomer(final int id);
+	//public int deleteCustomer(final int id);
 	
 
 }

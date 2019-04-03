@@ -40,11 +40,11 @@ public class CustomerController {
 		return customer;
 	}
 	
-	@GetMapping("/getAllCustomers")
+	/*@GetMapping("/getAllCustomers")
 	public List<Customer> getAllCustomers(){
 		List<Customer> allCustomersList = customerService.getAllCustomers();
 		return  allCustomersList;
-	}
+	}*/
 	
 	@PutMapping("/updateCustomer/{id}")
 	public int updateCustomer(@RequestBody Customer customer,@PathVariable int id) {
@@ -53,11 +53,11 @@ public class CustomerController {
 		
 	}
 	
-	@DeleteMapping("/deleteCustomer/{id}")
+	/*@DeleteMapping("/deleteCustomer/{id}")
 	public int deleteCustomer(@PathVariable int id) {
 		int deleteCustomer = customerService.deleteCustomer(id);
 		return deleteCustomer;
 		
-	}
+	}*/
 
 }
