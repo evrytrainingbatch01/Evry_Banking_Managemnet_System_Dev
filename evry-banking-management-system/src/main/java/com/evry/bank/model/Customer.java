@@ -9,11 +9,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.springframework.context.annotation.Description;
 
 @Entity
 @Table(name = "eb_customer")
-@Description("This is customer entity")
 public class Customer {
 
 	@Id
