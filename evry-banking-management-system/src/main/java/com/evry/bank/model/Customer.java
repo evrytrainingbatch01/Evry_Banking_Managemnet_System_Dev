@@ -18,7 +18,7 @@ public class Customer {
 	}
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "EB_CUSTOMER_ID")
 	private int id;
 
@@ -43,20 +43,20 @@ public class Customer {
 	@Column(name = "EB_CUSTOMER_MOBILENO")
 	private int mobileNo;
 
-	@Column(name = "EB_CUSTOMER_LOGIN_ID")
-	private int loginId;
-
-	@Column(name = "EB_CUSTOMER_PASSWORD")
-	private String password;
-
-	@Column(name = "EB_CUSTOMER_USERTYPE")
-	private int userType;
-
-	@Column(name = "EB_CUSTOMER_ACCOUNTSTATUS")
-	private int accountStatus;
-
-	@Column(name = "EB_CUSTOMER_LASTUPDATED")
-	private Date lastUpdated;
+//	@Column(name = "EB_CUSTOMER_LOGIN_ID")
+//	private int loginId;
+//
+//	@Column(name = "EB_CUSTOMER_PASSWORD")
+//	private String password;
+//
+//	@Column(name = "EB_CUSTOMER_USERTYPE")
+//	private int userType;
+//
+//	@Column(name = "EB_CUSTOMER_ACCOUNTSTATUS")
+//	private int accountStatus;
+//
+//	@Column(name = "EB_CUSTOMER_LASTUPDATED")
+//	private Date lastUpdated;
 
 	public int getId() {
 		return id;
@@ -122,44 +122,44 @@ public class Customer {
 		this.mobileNo = mobileNo;
 	}
 
-	public int getLoginId() {
-		return loginId;
-	}
-
-	public void setLoginId(int loginId) {
-		this.loginId = loginId;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public int getUserType() {
-		return userType;
-	}
-
-	public void setUserType(int userType) {
-		this.userType = userType;
-	}
-
-	public int getAccountStatus() {
-		return accountStatus;
-	}
-
-	public void setAccountStatus(int accountStatus) {
-		this.accountStatus = accountStatus;
-	}
-
-	public Date getLastUpdated() {
-		return lastUpdated;
-	}
-
-	public void setLastUpdated(Date lastUpdated) {
-		this.lastUpdated = lastUpdated;
-	}
+//	public int getLoginId() {
+//		return loginId;
+//	}
+//
+//	public void setLoginId(int loginId) {
+//		this.loginId = loginId;
+//	}
+//
+//	public String getPassword() {
+//		return password;
+//	}
+//
+//	public void setPassword(String password) {
+//		this.password = password;
+//	}
+//
+//	public int getUserType() {
+//		return userType;
+//	}
+//
+//	public void setUserType(int userType) {
+//		this.userType = userType;
+//	}
+//
+//	public int getAccountStatus() {
+//		return accountStatus;
+//	}
+//
+//	public void setAccountStatus(int accountStatus) {
+//		this.accountStatus = accountStatus;
+//	}
+//
+//	public Date getLastUpdated() {
+//		return lastUpdated;
+//	}
+//
+//	public void setLastUpdated(Date lastUpdated) {
+//		this.lastUpdated = lastUpdated;
+//	}
 	
 }
