@@ -1,6 +1,7 @@
 package com.evry.bank.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,13 +27,13 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerDao customerDao;
 
 	@Override
-	public int addCustomer(Customer customer) {
-		return customerDao.addCustomer(customer);
+	public Customer addCustomer(Customer customer) {
+		return customerDao.save(customer);
 	}
 
 	@Override
-	public Customer getCusomterById(int id) {
-		return customerDao.getCusomterById(id);
+	public Optional<Customer> getCusomterById(int id) {
+		return customerDao.findOne(id);
 	}
 
 	/*@Override
@@ -42,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public int updateCustomer(int id, Customer customer) {
-		return customerDao.updateCustomer(id, customer);
+		return 0;
 	}
 
 	/*@Override

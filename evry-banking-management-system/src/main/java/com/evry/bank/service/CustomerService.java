@@ -1,6 +1,7 @@
 package com.evry.bank.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.evry.bank.model.Customer;
 
@@ -10,13 +11,13 @@ public interface CustomerService {
 	 * this method tells store customerdetails
 	 * @return type int
 	 */
-	public int addCustomer(final Customer customer);
+	public Customer addCustomer(final Customer customer);
 
 	/*
 	 * if we want get perticular customerid so you can using this method
 	 * @return type is Customer
 	 */
-	public Customer getCusomterById(final int id);
+	public Optional<Customer> getCusomterById(final int id);
 	
 	/*
 	 * here you can get all customer details
