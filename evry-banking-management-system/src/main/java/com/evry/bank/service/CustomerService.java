@@ -23,7 +23,7 @@ public interface CustomerService {
 	 * this method return customer object
 	 */
 
-	public List<Customer> getAllCustomers();
+	//public List<Customer> getAllCustomers();
 	
 	/*
 	 * here you can update customer details 
@@ -36,6 +36,6 @@ public interface CustomerService {
 	 * delete perticular customer id using this mehtod
 	 */
 
-	public int deleteCustomer(final int id);
+	//public int deleteCustomer(final int id);
 
 }

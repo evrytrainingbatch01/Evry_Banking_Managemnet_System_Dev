@@ -12,6 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "eb_customer")
 public class Customer {
+	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
