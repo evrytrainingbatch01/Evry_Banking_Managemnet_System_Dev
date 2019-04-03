@@ -160,4 +160,5 @@ public class Customer {
 	public void setLastUpdated(Date lastUpdated) {
 		this.lastUpdated = lastUpdated;
 	}
+	
 }
