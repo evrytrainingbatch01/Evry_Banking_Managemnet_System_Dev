@@ -18,6 +18,10 @@ import com.evry.bank.service.CustomerService;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 	
+	public CustomerServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	@Autowired
 	private CustomerDao customerDao;
 
@@ -31,19 +35,19 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.getCusomterById(id);
 	}
 
-	@Override
+	/*@Override
 	public List<Customer> getAllCustomers() {
 		return customerDao.getAllCustomers();
-	}
+	}*/
 
 	@Override
 	public int updateCustomer(int id, Customer customer) {
 		return customerDao.updateCustomer(id, customer);
 	}
 
-	@Override
+	/*@Override
 	public int deleteCustomer(int id) {
 		return customerDao.deleteCustomer(id);
 	}
-
+*/
 }

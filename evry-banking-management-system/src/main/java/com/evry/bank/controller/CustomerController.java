@@ -17,12 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.evry.bank.model.Customer;
 import com.evry.bank.service.CustomerService;
+import com.evry.bank.service.impl.CustomerServiceImpl;
 
 @RestController 
 public class CustomerController {
 	
 	@Autowired
-	private CustomerService customerService;
+	private CustomerServiceImpl customerService;
+	
+	public CustomerController() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody Customer customer) {
@@ -40,11 +45,11 @@ public class CustomerController {
 		return customer;
 	}
 	
-	@GetMapping("/getAllCustomers")
+	/*@GetMapping("/getAllCustomers")
 	public List<Customer> getAllCustomers(){
 		List<Customer> allCustomersList = customerService.getAllCustomers();
 		return  allCustomersList;
-	}
+	}*/
 	
 	@PutMapping("/updateCustomer/{id}")
 	public int updateCustomer(@RequestBody Customer customer,@PathVariable int id) {
@@ -53,11 +58,11 @@ public class CustomerController {
 		
 	}
 	
-	@DeleteMapping("/deleteCustomer/{id}")
+	/*@DeleteMapping("/deleteCustomer/{id}")
 	public int deleteCustomer(@PathVariable int id) {
 		int deleteCustomer = customerService.deleteCustomer(id);
 		return deleteCustomer;
 		
-	}
+	}*/
 
 }
