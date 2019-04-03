@@ -3,9 +3,10 @@ package com.evry.bank.dao;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import com.evry.bank.model.Customer;
-
+@Repository
 public interface CustomerDao extends CrudRepository<Customer,Integer>{
 	
 	public int addCustomer(final Customer customer);
