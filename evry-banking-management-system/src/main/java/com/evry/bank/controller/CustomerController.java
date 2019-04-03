@@ -17,12 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.evry.bank.model.Customer;
 import com.evry.bank.service.CustomerService;
+import com.evry.bank.service.impl.CustomerServiceImpl;
 
 @RestController 
 public class CustomerController {
 	
 	@Autowired
-	private CustomerService customerService;
+	private CustomerServiceImpl customerService;
+	
+	public CustomerController() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	@PostMapping("/addCustomer")
 	public Customer addCustomer(@RequestBody Customer customer) {
