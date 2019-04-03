@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Customer {
 
+	
 	private int id;
 	private String userName;
 	private String email;
