@@ -16,19 +16,26 @@ import com.evry.bank.model.Account;
  * 
  */
 
-@Repository
+@Repository("accountDao")
 public class AccountDao {
 	@Autowired
 	AccountRepository accountRepository;
 
 	// Check Customer Bank details using id
-	public Optional<Account> checkAccountDetails(int id) {
-		return accountRepository.findById(id);
+	public boolean checkAccountDetails(int id) {
+		boolean flag = false;
+		
+		if(accountRepository.findById(id).isPresent()) {
+			flag = true;
+		}
+		return flag;
 	}
 
 	// Check Customer Bank balance using id
 	public BigDecimal checkBalance(int id) {
-		return accountRepository.getOne(id).getAccountBalance();
+		 
+				Account account = accountRepository.getOne(id);
+				return account.getAccountBalance();
 	}
 
 	// Transfer Money from one account to another account
