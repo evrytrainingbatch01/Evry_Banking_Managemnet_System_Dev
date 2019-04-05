@@ -48,8 +48,13 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public int updateCustomer(int id, Customer customer) {
-		return 0;
+	public Customer updateCustomer(int id, Customer customer) {
+		return customerDao.save(customer);
+	}
+
+	public void deleteCustomer(int id) {
+		// TODO Auto-generated method stub
+		customerDao.delete(id);;
 	}
 
 	/*@Override

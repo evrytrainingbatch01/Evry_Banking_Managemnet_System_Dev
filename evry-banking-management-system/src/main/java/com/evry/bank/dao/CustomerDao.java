@@ -30,7 +30,7 @@ public class CustomerDao {
 		return customerRepository.findById(customerId);
 	}
 
-	public void delete(Customer customer) {
-		customerRepository.delete(customer);
+	public void delete(int id) {
+		customerRepository.deleteById(id);
 	}
 }

@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.evry.bank.model.Customer;
-import com.evry.bank.service.CustomerService;
 import com.evry.bank.service.impl.CustomerServiceImpl;
 
 @RestController 
@@ -56,17 +55,16 @@ public class CustomerController {
 	}
 	
 	@PutMapping("/updateCustomer/{id}")
-	public int updateCustomer(@RequestBody Customer customer,@PathVariable int id) {
-		int updateCustomer = customerService.updateCustomer(id, customer);
+	public Customer updateCustomer(@RequestBody Customer customer,@PathVariable int id) {
+		Customer updateCustomer = customerService.updateCustomer(id, customer);
 		return updateCustomer;
 		
 	}
 	
-	/*@DeleteMapping("/deleteCustomer/{id}")
-	public int deleteCustomer(@PathVariable int id) {
-		int deleteCustomer = customerService.deleteCustomer(id);
-		return deleteCustomer;
+	@DeleteMapping("/deleteCustomer/{id}")
+	public void deleteCustomer(@PathVariable int id) {
+	 customerService.deleteCustomer(id);
 		
-	}*/
+	}
 
 }

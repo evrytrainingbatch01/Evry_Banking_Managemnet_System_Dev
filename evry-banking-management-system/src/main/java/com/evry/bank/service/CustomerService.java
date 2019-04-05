@@ -31,7 +31,7 @@ public interface CustomerService {
 	 * @return type int
 	 */
 
-	public int updateCustomer(final int id, final Customer customer);
+	public Customer updateCustomer(final int id, final Customer customer);
 
 	List<Customer> getAllCustomers();
 	
