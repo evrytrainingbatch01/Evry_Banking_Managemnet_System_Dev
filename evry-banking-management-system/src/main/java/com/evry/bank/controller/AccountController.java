@@ -1,8 +1,10 @@
+/**
+ * @author sadiq.ahamad
+ */
 package com.evry.bank.controller;
 
 import java.math.BigDecimal;
 
-import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
