@@ -1,165 +1,164 @@
-package com.evry.bank.model;
+package com.asso.entity;
 
 import java.util.Date;
+
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name = "eb_customer")
+@Table(name="EB_CUSTOMER")
 public class Customer {
 	
-	public Customer() {
-		// TODO Auto-generated constructor stub
-	}
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EB_CUSTOMER_ID")
+	
 	private int id;
-
-	@Column(name = "EB_CUSTOMER_NAME")
 	private String name;
-
-	@Column(name = "EB_CUSTOMER_EMAILID")
 	private String emailId;
-
-	@Column(name = "EB_CUSTOMER_DOB")
 	private Date dateOfBirth;
-
-	@Column(name = "EB_CUSTOMER_ADDRESS")
 	private String address;
-
-	@Column(name = "EB_CUSTOMER_CITY")
 	private String city;
-
-	@Column(name = "EB_CUSTOMER_COUNTRY")
 	private String country;
-
-	@Column(name = "EB_CUSTOMER_MOBILENO")
 	private int mobileNo;
-
-//	@Column(name = "EB_CUSTOMER_LOGIN_ID")
-//	private int loginId;
-//
-//	@Column(name = "EB_CUSTOMER_PASSWORD")
-//	private String password;
-//
-//	@Column(name = "EB_CUSTOMER_USERTYPE")
-//	private int userType;
-//
-//	@Column(name = "EB_CUSTOMER_ACCOUNTSTATUS")
-//	private int accountStatus;
-//
-//	@Column(name = "EB_CUSTOMER_LASTUPDATED")
-//	private Date lastUpdated;
-
+	private int loginId;
+	private String password;
+	private int userType;
+	private int accountStatus;
+	private Date lastUpdated;
+	
+	@OneToOne
+	private Account account;
+	
+	public Customer() {
+		
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "eb_customer_generator")
+	@SequenceGenerator(name="eb_customer_generator", sequenceName = "eb_customer_seq")
+	@Column(name = "EB_CUSTOMER_ID")
 	public int getId() {
 		return id;
 	}
-
+	
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	@Column(name = "EB_CUSTOMER_NAME")
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_EMAILID")
 	public String getEmailId() {
 		return emailId;
 	}
-
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_DOB")
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
-
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_ADDRESS")
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_CITY")
 	public String getCity() {
 		return city;
 	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_COUNTRY")
 	public String getCountry() {
 		return country;
 	}
-
 	public void setCountry(String country) {
 		this.country = country;
 	}
-
+	
+	@Column(name = "EB_CUSTOMER_MOBILENO")
 	public int getMobileNo() {
 		return mobileNo;
 	}
-
 	public void setMobileNo(int mobileNo) {
 		this.mobileNo = mobileNo;
 	}
+	
+	@Column(name = "EB_CUSTOMER_LOGIN_ID")
+	public int getLoginId() {
+		return loginId;
+	}
+	public void setLoginId(int loginId) {
+		this.loginId = loginId;
+	}
+	
+	@Column(name = "EB_CUSTOMER_PASSWORD")
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	@Column(name = "EB_CUSTOMER_USERTYPE")
+	public int getUserType() {
+		return userType;
+	}
+	public void setUserType(int userType) {
+		this.userType = userType;
+	}
+	
+	@Column(name = "EB_CUSTOMER_ACCOUNTSTATUS")
+	public int getAccountStatus() {
+		return accountStatus;
+	}
+	public void setAccountStatus(int accountStatus) {
+		this.accountStatus = accountStatus;
+	}
+	
+	@Column(name = "EB_CUSTOMER_LASTUPDATED")
+	public Date getLastUpdated() {
+		return lastUpdated;
+	}
+	public void setLastUpdated(Date lastUpdated) {
+		this.lastUpdated = lastUpdated;
+	}
 
-//	public int getLoginId() {
-//		return loginId;
-//	}
-//
-//	public void setLoginId(int loginId) {
-//		this.loginId = loginId;
-//	}
-//
-//	public String getPassword() {
-//		return password;
-//	}
-//
-//	public void setPassword(String password) {
-//		this.password = password;
-//	}
-//
-//	public int getUserType() {
-//		return userType;
-//	}
-//
-//	public void setUserType(int userType) {
-//		this.userType = userType;
-//	}
-//
-//	public int getAccountStatus() {
-//		return accountStatus;
-//	}
-//
-//	public void setAccountStatus(int accountStatus) {
-//		this.accountStatus = accountStatus;
-//	}
-//
-//	public Date getLastUpdated() {
-//		return lastUpdated;
-//	}
-//
-//	public void setLastUpdated(Date lastUpdated) {
-//		this.lastUpdated = lastUpdated;
-//	}
+	@Access(AccessType.PROPERTY)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name="EB_CUSTOMER_ACCOUNT_ID")
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
 	
 }
