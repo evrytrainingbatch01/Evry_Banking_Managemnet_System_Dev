@@ -23,8 +23,8 @@ public class Account {
 	private int id;
 	private BigDecimal accountBalance;
 	
-	@OneToMany(mappedBy = "account")
-	private List<Transaction> transactions = new ArrayList<Transaction>();
+	/*@OneToMany(mappedBy = "account")
+	private List<Transaction> transactions = new ArrayList<Transaction>();*/
 	
 	public Account() {
 		
@@ -51,13 +51,13 @@ public class Account {
 		this.accountBalance = accountBalance;
 	}
 
-	public List<Transaction> getTransactions() {
+	/*public List<Transaction> getTransactions() {
 		return transactions;
 	}
 
 	public void setTransactions(List<Transaction> transactions) {
 		this.transactions = transactions;
-	}
+	}*/
 	
 	
 }
