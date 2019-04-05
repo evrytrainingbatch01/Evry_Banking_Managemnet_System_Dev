@@ -32,6 +32,8 @@ public interface CustomerService {
 	 */
 
 	public int updateCustomer(final int id, final Customer customer);
+
+	List<Customer> getAllCustomers();
 	
 	/*
 	 * delete perticular customer id using this mehtod

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import com.evry.bank.service.CustomerService;
 import com.evry.bank.service.impl.CustomerServiceImpl;
 
 @RestController 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CustomerController {
 	
 	@Autowired
@@ -46,11 +48,11 @@ public class CustomerController {
 		return customer;
 	}
 	
-	/*@GetMapping("/getAllCustomers")
+	@GetMapping("/getAllCustomers")
 	public List<Customer> getAllCustomers(){
 		List<Customer> allCustomersList = customerService.getAllCustomers();
 		return  allCustomersList;
-	}*/
+	}
 	
 	@PutMapping("/updateCustomer/{id}")
 	public int updateCustomer(@RequestBody Customer customer,@PathVariable int id) {

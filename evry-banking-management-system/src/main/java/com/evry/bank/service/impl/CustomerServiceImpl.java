@@ -2,7 +2,9 @@ package com.evry.bank.service.impl;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,10 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public Customer addCustomer(Customer customer) {
+		Random rand = new Random();
+		Integer number = rand.nextInt(9000000) + 1000000;
+		customer.setLoginId(number);
+		customer.setPassword(RandomStringUtils.randomAlphanumeric(17).toUpperCase());
 		return customerDao.save(customer);
 	}
 
@@ -36,10 +42,10 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.findOne(id);
 	}
 
-	/*@Override
+	@Override
 	public List<Customer> getAllCustomers() {
-		return customerDao.getAllCustomers();
-	}*/
+		return customerDao.findAll();
+	}
 
 	@Override
 	public int updateCustomer(int id, Customer customer) {

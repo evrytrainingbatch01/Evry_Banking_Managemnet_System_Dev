@@ -28,7 +28,7 @@ public class Customer {
 	private String address;
 	private String city;
 	private String country;
-	private int mobileNo;
+	private long mobileNo;
 	private int loginId;
 	private String password;
 	private int userType;
@@ -103,10 +103,10 @@ public class Customer {
 	}
 	
 	@Column(name = "EB_CUSTOMER_MOBILENO")
-	public int getMobileNo() {
+	public long getMobileNo() {
 		return mobileNo;
 	}
-	public void setMobileNo(int mobileNo) {
+	public void setMobileNo(long mobileNo) {
 		this.mobileNo = mobileNo;
 	}
 	

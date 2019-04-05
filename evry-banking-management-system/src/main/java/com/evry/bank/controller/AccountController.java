@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.evry.bank.service.AccountService;
 
 @RestController
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AccountController {
 
 	@Autowired
