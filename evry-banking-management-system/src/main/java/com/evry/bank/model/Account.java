@@ -1,13 +1,14 @@
 package com.asso.entity;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,8 +24,7 @@ public class Account {
 	private int id;
 	private BigDecimal accountBalance;
 	
-	/*@OneToMany(mappedBy = "account")
-	private List<Transaction> transactions = new ArrayList<Transaction>();*/
+	private List<Transaction> transactions;
 	
 	public Account() {
 		
@@ -50,14 +50,15 @@ public class Account {
 	public void setAccountBalance(BigDecimal accountBalance) {
 		this.accountBalance = accountBalance;
 	}
-
-	/*public List<Transaction> getTransactions() {
-		return transactions;
+	
+	@OneToMany(targetEntity = Transaction.class, mappedBy = "account", 
+		    cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	public List<Transaction> getTransactions() {
+	    return transactions;
 	}
 
 	public void setTransactions(List<Transaction> transactions) {
-		this.transactions = transactions;
-	}*/
-	
+	    this.transactions = transactions;
+	}
 	
 }
