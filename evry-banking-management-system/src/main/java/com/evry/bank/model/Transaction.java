@@ -1,4 +1,4 @@
-package com.asso.entity;
+package com.evry.bank.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
