@@ -1,4 +1,4 @@
-package com.asso.entity;
+package com.evry.bank.model;
 
 import java.math.BigDecimal;
 import java.util.List;
