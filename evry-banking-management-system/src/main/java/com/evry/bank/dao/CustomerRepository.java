@@ -6,6 +6,7 @@
 package com.evry.bank.dao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.evry.bank.model.Customer;
 
@@ -14,5 +15,9 @@ import com.evry.bank.model.Customer;
  * @author venkata.kuppili
  *
  */
+@Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
+
+	Customer findByIdAndPassword(Customer customer);
+
 }
