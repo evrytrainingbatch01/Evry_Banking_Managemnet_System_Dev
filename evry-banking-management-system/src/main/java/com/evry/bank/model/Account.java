@@ -24,7 +24,7 @@ public class Account {
 	private int id;
 	private BigDecimal accountBalance;
 	
-	private List<Transaction> transactions;
+//	private List<Transaction> transactions;
 	
 	public Account() {
 		
@@ -51,14 +51,13 @@ public class Account {
 		this.accountBalance = accountBalance;
 	}
 	
-	@OneToMany(targetEntity = Transaction.class, mappedBy = "account", 
-		    cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	public List<Transaction> getTransactions() {
-	    return transactions;
-	}
-
-	public void setTransactions(List<Transaction> transactions) {
-	    this.transactions = transactions;
-	}
+	/*
+	 * @OneToMany(targetEntity = Transaction.class, mappedBy = "account", cascade =
+	 * CascadeType.ALL, fetch = FetchType.EAGER) public List<Transaction>
+	 * getTransactions() { return transactions; }
+	 * 
+	 * public void setTransactions(List<Transaction> transactions) {
+	 * this.transactions = transactions; }
+	 */
 	
 }

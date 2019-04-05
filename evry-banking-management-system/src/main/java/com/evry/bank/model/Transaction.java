@@ -19,7 +19,7 @@ public class Transaction {
 	private String type;;
 	
 	
-	private Account account;
+//	private Account account;
 	
 	
 	public Transaction() {
@@ -47,15 +47,14 @@ public class Transaction {
 		this.type = type;
 	}
 
-	@ManyToOne
-	@JoinColumn(name = "EB_TRANSACTION_ACCOUNT_ID")
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
-	}
+	/*
+	 * @ManyToOne
+	 * 
+	 * @JoinColumn(name = "EB_TRANSACTION_ACCOUNT_ID") public Account getAccount() {
+	 * return account; }
+	 * 
+	 * public void setAccount(Account account) { this.account = account; }
+	 */
 	
 	
 }
