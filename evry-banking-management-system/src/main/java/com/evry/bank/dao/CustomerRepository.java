@@ -18,6 +18,8 @@ import com.evry.bank.model.Customer;
 @Repository
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 
-	Customer findByIdAndPassword(Customer customer);
+	
+
+	String findByPassword(String password);
 
 }

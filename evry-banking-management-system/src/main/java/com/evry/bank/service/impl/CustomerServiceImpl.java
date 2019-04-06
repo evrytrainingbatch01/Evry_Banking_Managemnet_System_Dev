@@ -54,7 +54,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	public void deleteCustomer(int id) {
 		// TODO Auto-generated method stub
-		customerDao.delete(id);;
+		customerDao.delete(id);
 	}
 
 	/*@Override
