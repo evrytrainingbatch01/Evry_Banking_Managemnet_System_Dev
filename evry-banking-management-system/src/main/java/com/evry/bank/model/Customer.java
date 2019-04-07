@@ -29,7 +29,7 @@ public class Customer {
 	private String city;
 	private String country;
 	private long mobileNo;
-	private int loginId;
+	private Integer loginId;
 	private String password;
 	private int userType;
 	private int accountStatus;
@@ -111,10 +111,10 @@ public class Customer {
 	}
 	
 	@Column(name = "EB_CUSTOMER_LOGINID")
-	public int getLoginId() {
+	public Integer getLoginId() {
 		return loginId;
 	}
-	public void setLoginId(int loginId) {
+	public void setLoginId(Integer loginId) {
 		this.loginId = loginId;
 	}
 	

@@ -11,20 +11,22 @@ import org.springframework.stereotype.Service;
 import com.evry.bank.dao.CustomerDao;
 import com.evry.bank.model.Customer;
 import com.evry.bank.service.CustomerService;
+import com.evry.bank.model.Customer;
 
 /**
- * this is CustomerService class implmented by customerService interface
- * here perform crud operation of customer
+ * this is CustomerService class implmented by customerService interface here
+ * perform crud operation of customer
+ * 
  * @author buddamallappa.gu
  *
  */
 @Service
 public class CustomerServiceImpl implements CustomerService {
-	
+
 	public CustomerServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Autowired
 	private CustomerDao customerDao;
 
@@ -57,9 +59,16 @@ public class CustomerServiceImpl implements CustomerService {
 		customerDao.delete(id);
 	}
 
-	/*@Override
-	public int deleteCustomer(int id) {
-		return customerDao.deleteCustomer(id);
+	@Override
+	public Customer checkLogin(int id, String password) {
+
+		return customerDao.checkLogin(id, password);
 	}
-*/
+
+	@Override
+	public boolean resetPassword(int id, String newPwd) {
+		
+		return customerDao.resetPassword(id, newPwd);
+	}
+
 }
