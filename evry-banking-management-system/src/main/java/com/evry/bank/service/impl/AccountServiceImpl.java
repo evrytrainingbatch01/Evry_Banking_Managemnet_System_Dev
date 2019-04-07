@@ -2,6 +2,8 @@ package com.evry.bank.service.impl;
 
 import java.math.BigDecimal;
 
+import javax.persistence.EntityNotFoundException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,8 +26,14 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public void transferMoney(int fromid, int toid, double amount) {
-		accountDao.transferMoney(fromid, toid, amount);
+	public boolean transferMoney(int fromid, int toid, double amount) {
+		boolean flag = false;
+		try {
+			flag = accountDao.transferMoney(fromid, toid, amount);
+		} catch (EntityNotFoundException e) {
+			flag = false;
+		}
+		return flag;
 	}
 
 }

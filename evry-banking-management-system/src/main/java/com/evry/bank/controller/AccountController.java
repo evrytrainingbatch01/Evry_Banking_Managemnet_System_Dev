@@ -34,9 +34,9 @@ public class AccountController {
 	}
 
 	@PutMapping("/transferMoney/{id}/{toid}/{amount}")
-	public void transferMoney(@PathVariable("id") int fromid, @PathVariable("toid") int toid,
+	public boolean transferMoney(@PathVariable("id") int fromid, @PathVariable("toid") int toid,
 			@PathVariable("amount") double amount) {
-		accountService.transferMoney(fromid, toid, amount);
+		return accountService.transferMoney(fromid, toid, amount);
 	}
 
 }

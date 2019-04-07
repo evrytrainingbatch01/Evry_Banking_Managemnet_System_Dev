@@ -1,8 +1,8 @@
 package com.evry.bank.dao;
 
 import java.math.BigDecimal;
-import java.util.Optional;
 
+import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +24,8 @@ public class AccountDao {
 	// Check Customer Bank details using id
 	public boolean checkAccountDetails(int id) {
 		boolean flag = false;
-		
-		if(accountRepository.findById(id).isPresent()) {
+
+		if (accountRepository.findById(id).isPresent()) {
 			flag = true;
 		}
 		return flag;
@@ -33,14 +33,15 @@ public class AccountDao {
 
 	// Check Customer Bank balance using id
 	public BigDecimal checkBalance(int id) {
-		 
-				Account account = accountRepository.getOne(id);
-				return account.getAccountBalance();
+
+		Account account = accountRepository.getOne(id);
+		return account.getAccountBalance();
 	}
 
 	// Transfer Money from one account to another account
 	@Transactional
-	public void transferMoney(int fromid, int toid, double amount) {
+	public boolean transferMoney(int fromid, int toid, double amount) throws EntityNotFoundException{
+		boolean status = false;
 		if (null != accountRepository.findById(toid)) {
 			double fromBalance = checkBalance(fromid).doubleValue();
 			double toBalance = checkBalance(toid).doubleValue();
@@ -55,9 +56,10 @@ public class AccountDao {
 				Account account = accountRepository.getOne(toid);
 				account.setAccountBalance(new BigDecimal(toBalance + amount));
 				accountRepository.save(account);
+				status = true;
 			}
 		}
-
+		return status;
 	}
 
 }
