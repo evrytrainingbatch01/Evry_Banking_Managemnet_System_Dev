@@ -110,7 +110,7 @@ public class Customer {
 		this.mobileNo = mobileNo;
 	}
 	
-	@Column(name = "EB_CUSTOMER_LOGIN_ID")
+	@Column(name = "EB_CUSTOMER_LOGINID")
 	public int getLoginId() {
 		return loginId;
 	}
