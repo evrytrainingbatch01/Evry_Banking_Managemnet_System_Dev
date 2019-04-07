@@ -1,0 +1,170 @@
+Account:
+
+1) check account details:
+GET http://localhost:3759/checkAccountDetails/<account_id>
+
+Input: account_id
+Output: true/false
+
+2) Check Balance:
+GET http://localhost:3759/checkBalance/<account_id>
+
+Input: account_id
+Outpur: balance
+
+3) PUT /transferMoney/<source_account_id>/<destination_account_id>/<amount>
+
+Input: <source_account_id>, <destination_account_id>, <amount>
+Output: true/false
+
+Note: If you enter wrong destination_account_id or source_account_id has insufficient balance while transfer money you will get 'false'
+-------------------------------------
+Login:
+
+1) Check Login
+
+GET http://localhost:3759/login/<customer_id>/<password>
+
+Input : <customer_id>, <password>
+Output : 
+
+{
+    "id": 101,
+    "name": "abc",
+    "emailId": "test",
+    "dateOfBirth": "2008-07-03T18:30:00.000+0000",
+    "address": "test",
+    "city": "bang",
+    "country": "india",
+    "mobileNo": 5345,
+    "loginId": 54334,
+    "password": "45435",
+    "userType": 1,
+    "accountStatus": 1,
+    "lastUpdated": "2008-07-03T18:30:00.000+0000",
+    "account": null
+}
+
+2) Password reset
+
+PUT http://localhost:3759/login/<customer_id>/<new_password>
+
+Input: <customer_id>, <new_password>
+Output: true/false
+Customer:
+
+POST http://localhost:3759/addCustomer
+Input: id means customer_id
+Output: 
+{
+    "id": 2,
+    "name": "Ramesh",
+    "emailId": "rms.gs@gmail.com",
+    "dateOfBirth": "2011-11-01T18:30:00.000+0000",
+    "address": "Madiwala",
+    "city": "Bengaluru",
+    "country": "Ind",
+    "mobileNo": 909900,
+    "loginId": 2894993,
+    "password": "ZLBH8WLLG2TYRLNBT",
+    "userType": 0,
+    "accountStatus": 0,
+    "lastUpdated": null,
+    "account": null
+}
+
+2) GET http://localhost:3759/getCustomer/1
+
+
+Input :GET http://localhost:3759/getCustomer/{customer_id}
+
+Output:Customer Details with particular {customer_id}
+
+{
+    "id": 1,   {id means customer_id}
+    "name": "Arp",
+    "emailId": "Arp@gmail.com",
+    "dateOfBirth": "2011-11-01T18:30:00.000+0000",
+    "address": "tumkure",
+    "city": "Bengaluru",
+    "country": "Ind",
+    "mobileNo": 909900,
+    "loginId": 3492119,
+    "password": "XAMBENONH5AV444VM",
+    "userType": 0,
+    "accountStatus": 0,
+    "lastUpdated": null,
+    "account": null
+}
+
+
+GET http://localhost:3759/getAllCustomers
+@GetMapping("/getAllCustomers")
+
+Input:{getAllCustomers}-->getting all Customers
+Output:list of Customers
+
+{
+        "id": 3,  {id means customer_id}
+        "name": "sushma",
+        "emailId": "sushma@gmail.com",
+        "dateOfBirth": "2001-02-01T18:30:00.000+0000",
+        "address": "Gubbi",
+        "city": "Bengaluru",
+        "country": "Ind",
+        "mobileNo": 909900,
+        "loginId": 4305770,
+        "password": "DLX26L5CIYWSX08BQ",
+        "userType": 0,
+        "accountStatus": 0,
+        "lastUpdated": null,
+        "account": null
+    }
+
+PUT http://localhost:3759/updateCustomer/3
+
+Input:
+@PutMapping("/updateCustomer/{Customer_id}")
+
+{
+    "id": 3,   {id means customer_id}
+    "name": "sushma",
+    "emailId": "sushma@gmail.com",
+    "dateOfBirth": "2001-02-01T18:30:00.000+0000",
+    "address": "Gubbi",
+    "city": "Tumkure",-------->City updating
+    "country": "Ind",
+    "mobileNo": 909900,
+    "loginId": 4305770,
+    "password": "DLX26L5CIYWSX08BQ",
+    "userType": 0,
+    "accountStatus": 0,
+    "lastUpdated": null,
+    "account": null
+}
+
+Output:
+
+{
+    "id": 3,   {id means customer_id}
+    "name": "sushma",
+    "emailId": "sushma@gmail.com",
+    "dateOfBirth": "2001-02-01T18:30:00.000+0000",
+    "address": "Gubbi",
+    "city": "Tumkure",  ----City details updated
+    "country": "Ind",
+    "mobileNo": 909900,
+    "loginId": 4305770,
+    "password": "DLX26L5CIYWSX08BQ",
+    "userType": 0,
+    "accountStatus": 0,
+    "lastUpdated": null,
+    "account": null
+}
+
+
+DELETE http://localhost:3759/deleteCustomer/3
+
+Input:@DeleteMapping("/deleteCustomer/{Customer_id}")
+
+{id means customer_id}
