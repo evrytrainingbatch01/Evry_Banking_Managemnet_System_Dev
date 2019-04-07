@@ -8,6 +8,7 @@ import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.evry.bank.dao.AccountDao;
 import com.evry.bank.dao.CustomerDao;
 import com.evry.bank.model.Customer;
 import com.evry.bank.service.CustomerService;
@@ -60,14 +61,13 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer checkLogin(int id, String password) {
-
-		return customerDao.checkLogin(id, password);
+	public Customer checkLogin(int customerId, int customerLoginId, String password) {
+		return customerDao.checkLogin(customerId, customerLoginId, password);
 	}
 
 	@Override
 	public boolean resetPassword(int id, String newPwd) {
-		
+
 		return customerDao.resetPassword(id, newPwd);
 	}
 

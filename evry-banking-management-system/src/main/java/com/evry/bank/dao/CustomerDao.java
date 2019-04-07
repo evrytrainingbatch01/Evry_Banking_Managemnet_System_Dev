@@ -34,17 +34,17 @@ public class CustomerDao {
 		customerRepository.deleteById(id);
 	}
 
-	public Customer checkLogin(int id, String password) {
-		Optional<Customer> customers = customerRepository.findById(id);
+	public Customer checkLogin(int customerId, int customerLoginId, String password) {
+		Optional<Customer> customers = customerRepository.findById(customerId);
+
 		Customer customer = customers.get();
-		if (customer.getId() == id && customer.getPassword().equals(password)) {
+		if (customer.getLoginId() == customerLoginId && customer.getPassword().equals(password)) {
 			System.out.println("User Validated !! " + customer);
 			return customer;
 		} else {
 			System.out.println("User Invalid !!!!");
 			return null;
 		}
-
 	}
 
 	public boolean resetPassword(int id, String newPwd) {

@@ -40,7 +40,7 @@ public interface CustomerService {
 	 */
 
 	//public int deleteCustomer(final int id);
-	public Customer checkLogin(int id, String password);
+	public Customer checkLogin(int customerId, int customerLoginId, String password);
 
 	public boolean resetPassword(int id, String newPwd);
 }
