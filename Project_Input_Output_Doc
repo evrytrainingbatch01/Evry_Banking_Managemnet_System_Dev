@@ -23,9 +23,9 @@ Login:
 
 1) Check Login
 
-GET http://localhost:3759/login/<customer_id>/<password>
+GET http://localhost:3759/login/<customer_id>/<customer_login_id>/<password>
 
-Input : <customer_id>, <password>
+Input : <customer_id>, <customer_login_id>, <password>
 Output : 
 
 {
