@@ -16,8 +16,11 @@ import javax.persistence.Table;
 public class Transaction {
 		
 	private int id;
-	private String type;;
-	
+	private String type;
+	@Column(name="EB_TRANSACTION_CUSTOMER_ID")
+	private int customerId;
+	@Column(name="EB_TRANS_ACCOUNT_ID")
+	private int accountId;
 	
 //	private Account account;
 	
@@ -41,6 +44,22 @@ public class Transaction {
 	@Column(name = "EB_TRANSACTION_TYPE")
 	public String getType() {
 		return type;
+	}
+
+	public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public int getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
 	}
 
 	public void setType(String type) {
