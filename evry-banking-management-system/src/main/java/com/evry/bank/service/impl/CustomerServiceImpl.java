@@ -37,6 +37,7 @@ public class CustomerServiceImpl implements CustomerService {
 		Integer number = rand.nextInt(9000000) + 1000000;
 		customer.setLoginId(number);
 		customer.setPassword(RandomStringUtils.randomAlphanumeric(17).toUpperCase());
+		customer.setCustomeAccountId(rand.nextInt(9000000) + 1000000);
 		return customerDao.save(customer);
 	}
 
