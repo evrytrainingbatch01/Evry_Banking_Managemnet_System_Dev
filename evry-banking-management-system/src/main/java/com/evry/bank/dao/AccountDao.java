@@ -32,6 +32,15 @@ public class AccountDao {
 		return flag;
 	}
 
+	public boolean addAccount(Account account) {
+		boolean flag = false;
+		Account acc = accountRepository.save(account);
+		if (acc.getId() != 0) {
+			flag = true;
+		}
+		return flag;
+	}
+
 	// Check Customer Bank balance using id
 	public BigDecimal checkBalance(int id) {
 
@@ -41,7 +50,7 @@ public class AccountDao {
 
 	// Transfer Money from one account to another account
 	@Transactional
-	public boolean transferMoney(int fromid, int toid, double amount) throws EntityNotFoundException{
+	public boolean transferMoney(int fromid, int toid, double amount) throws EntityNotFoundException {
 		boolean status = false;
 		if (null != accountRepository.findById(toid)) {
 			double fromBalance = checkBalance(fromid).doubleValue();
