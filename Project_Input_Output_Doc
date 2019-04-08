@@ -10,9 +10,18 @@ Output: true/false
 GET http://localhost:3759/checkBalance/<account_id>
 
 Input: account_id
-Outpur: balance
+Output: balance
 
-3) PUT /transferMoney/<source_account_id>/<destination_account_id>/<amount>
+3) getAccountDetails
+GET http://localhost:3759/getAccountDetails/<account_id>
+Input: account_id
+OutPut: 
+{
+    "id": 1,
+    "accountBalance": 420
+}
+
+4) PUT /transferMoney/<source_account_id>/<destination_account_id>/<amount>
 
 Input: <source_account_id>, <destination_account_id>, <amount>
 Output: true/false
