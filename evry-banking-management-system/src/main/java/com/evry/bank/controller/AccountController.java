@@ -4,6 +4,7 @@
 package com.evry.bank.controller;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.evry.bank.model.Account;
+import com.evry.bank.model.Customer;
 import com.evry.bank.service.AccountService;
 
 @RestController
@@ -25,6 +28,12 @@ public class AccountController {
 	public boolean checkAccountDetails(@PathVariable("id") int id) {
 
 		return accountService.checkAccountDetails(id);
+	}
+	
+	@GetMapping("/getAccountDetails/{id}")
+	public Account getAccountDetails(@PathVariable("id") int id) {
+		Optional<Account> accounts = accountService.getAccountById(id);
+		return accounts.get();
 	}
 
 	@GetMapping("/checkBalance/{id}")

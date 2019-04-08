@@ -1,6 +1,7 @@
 package com.evry.bank.dao;
 
 import java.math.BigDecimal;
+import java.util.Optional;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
@@ -60,6 +61,10 @@ public class AccountDao {
 			}
 		}
 		return status;
+	}
+
+	public Optional<Account> getAccountById(int id) {
+		return accountRepository.findById(id);
 	}
 
 }
