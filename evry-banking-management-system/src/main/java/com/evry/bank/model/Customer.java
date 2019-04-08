@@ -33,8 +33,8 @@ public class Customer {
 	private int userType;
 	private int accountStatus;
 	private Date lastUpdated;
-	@Column(name = "EB_CUSTOMER_ACCOUNT_ID")
-	private int customeAccountId;
+	//@Column(name = "EB_CUSTOMER_ACCOUNT_ID")
+	//private int customeAccountId;
 
 	@OneToOne
 	private Account account;
@@ -55,13 +55,13 @@ public class Customer {
 		this.id = id;
 	}
 
-	public int getCustomeAccountId() {
-		return customeAccountId;
-	}
-
-	public void setCustomeAccountId(int customeAccountId) {
-		this.customeAccountId = customeAccountId;
-	}
+//	public int getCustomeAccountId() {
+//		return customeAccountId;
+//	}
+//
+//	public void setCustomeAccountId(int customeAccountId) {
+//		this.customeAccountId = customeAccountId;
+//	}
 
 	@Column(name = "EB_CUSTOMER_NAME")
 	public String getName() {
