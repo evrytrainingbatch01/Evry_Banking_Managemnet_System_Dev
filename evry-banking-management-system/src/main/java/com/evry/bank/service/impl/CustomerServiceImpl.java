@@ -76,8 +76,8 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Customer checkLogin(int customerId, int customerLoginId, String password) {
-		return customerDao.checkLogin(customerId, customerLoginId, password);
+	public Customer checkLogin(int customerId, String password) {
+		return customerDao.checkLogin(customerId,  password);
 	}
 
 	@Override

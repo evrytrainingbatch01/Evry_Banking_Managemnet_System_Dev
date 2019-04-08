@@ -68,10 +68,9 @@ public class CustomerController {
 
 	}
 
-	@PostMapping("/login/{customerId}/{customerLoginId}/{password}")
-	public Customer checkLogin(@PathVariable int customerId, @PathVariable int customerLoginId,
-			@PathVariable String password) {
-		return customerService.checkLogin(customerId, customerLoginId, password);
+	@PostMapping("/login/{customerId}/{password}")
+	public Customer checkLogin(@PathVariable int customerId, @PathVariable String password) {
+		return customerService.checkLogin(customerId, password);
 	}
 
 	@PutMapping("/login/{id}/{newPwd}")
